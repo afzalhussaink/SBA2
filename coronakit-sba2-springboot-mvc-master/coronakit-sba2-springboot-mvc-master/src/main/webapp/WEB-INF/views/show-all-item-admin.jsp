@@ -25,6 +25,7 @@
 </head>
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<div class="jumbotron">
 		<h2>Corona Kit - Product List</h2>
 	</div>

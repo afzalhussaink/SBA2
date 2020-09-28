@@ -24,7 +24,7 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<jsp:include page="${pageContext.request.contextPath }/header" />
+	<jsp:include page="header.jsp" />
 	<h1>Welcome to Corona-Kit Home...</h1>
 	<hr/>
 	<a href="${pageContext.request.contextPath}/custom-login"><input type="button" value="Login" /></a>

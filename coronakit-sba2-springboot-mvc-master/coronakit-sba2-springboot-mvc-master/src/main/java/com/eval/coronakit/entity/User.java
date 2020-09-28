@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "users")
+@Table(name = "USERS")
 public class User {
 
 	
@@ -14,14 +14,16 @@ public class User {
 	@Column(insertable = true)
 	private String username;
 	
-	@Column
+	@Column(name="PASSWORD")
 	private String password;
-	@Column
+
+	@Column(name="ENABLED")
 	private boolean enabled;
-	@Column
+	
+	@Column(name="EMAIL")
 	private String email;
 	
-	@Column
+	@Column(name="CONTACT")
 	private String contact;
 	
 	public String getUsername() {
@@ -55,5 +57,8 @@ public class User {
 		this.contact = contact;
 	}
 	
+	public User() {
+		
+	}
 	
 }

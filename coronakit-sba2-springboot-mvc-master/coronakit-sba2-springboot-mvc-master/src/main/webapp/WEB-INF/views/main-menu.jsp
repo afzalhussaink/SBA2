@@ -9,7 +9,7 @@
 <title>Dashboard</title>
 </head>
 <body>
-
+<jsp:include page="header.jsp" />
 <h2>Hello <security:authentication property="principal.username"/></h2>
 <br/>
 <spring-form:form action="${pageContext.request.contextPath}/logout" method="POST">

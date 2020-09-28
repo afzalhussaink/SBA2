@@ -14,8 +14,8 @@
 	<spring:form action="${pageContext.request.contextPath}/register-save" method="POST" modelAttribute="userDetails">
 		<br/>
 		<br/>
-		<spring:label path="userName">Enter user name</spring:label>
-		<spring:input path="userName"/>
+		<spring:label path="username">Enter user name</spring:label>
+		<spring:input path="username"/>
 		<br/>
 		<br/>
 		<spring:label path="password">Enter password</spring:label>

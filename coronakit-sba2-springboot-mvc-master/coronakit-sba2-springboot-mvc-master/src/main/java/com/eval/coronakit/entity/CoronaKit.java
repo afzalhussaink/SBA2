@@ -1,19 +1,30 @@
 package com.eval.coronakit.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="CORONA_KIT")
 public class CoronaKit {
 	
 	@Id
+	@Column(name="ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@Column(name="DELIVERY_ADDRESS")
 	private String deliveryAddress;
+	
+	@Column(name="ORDER_DATE")
 	private String orderDate;
+	
+	@Column(name="TOTAL_AMOUNT")
 	private int totalAmount;
+	
 	public CoronaKit() {
 		// TODO Auto-generated constructor stub
 	}

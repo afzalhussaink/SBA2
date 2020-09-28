@@ -26,6 +26,7 @@
 </head>
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<section class="container-fluid p-4">
 		<h3>${isNew?'New Product':'Edit Product' }</h3>
 

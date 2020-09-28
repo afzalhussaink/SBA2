@@ -9,6 +9,7 @@
 <title>Login</title>
 </head>
 <body>
+<jsp:include page="header.jsp" />
 <core:if test="${param.error != null}">
 	<i>Invalid Credentials!!!</i>
 </core:if>

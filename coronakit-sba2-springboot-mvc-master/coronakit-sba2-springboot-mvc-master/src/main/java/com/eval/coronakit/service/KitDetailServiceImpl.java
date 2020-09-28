@@ -2,6 +2,8 @@ package com.eval.coronakit.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +17,10 @@ public class KitDetailServiceImpl implements KitDetailService {
 	KitDetailRepository repository;
 	
 	@Override
+	@Transactional
 	public KitDetail addKitItem(KitDetail kitItem) {
-		// TODO Auto-generated method stub
-		return null;
+		repository.save(kitItem);
+		return kitItem;
 	}
 
 	@Override

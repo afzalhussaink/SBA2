@@ -7,5 +7,6 @@ import com.eval.coronakit.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, String>{
-
+	boolean existsByUsername(String userName);
+	User findByUsername(String userName);
 }
