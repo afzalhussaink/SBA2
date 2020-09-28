@@ -16,4 +16,9 @@ public class HomeController {
 	public String home() {
 		return  "main-menu";
 	}
+	
+	@RequestMapping("/header")
+	public String showHeader() {
+		return "header";
+	}
 }

@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin</title>
 </head>
 <body>
-<h1>This is Admin dashboard</h1>
-</body>
+	<jsp:include page="${pageContext.request.contextPath }/header" />
+	<h1>This is Admin dashboard</h1>
+	<a href="${pageContext.request.contextPath}/admin/product-entry">Add New Product</a>
+	<span>|</span>
+	<a href="${pageContext.request.contextPath}/admin/product-list">List All Products</a>
+	</body>
 </html>
