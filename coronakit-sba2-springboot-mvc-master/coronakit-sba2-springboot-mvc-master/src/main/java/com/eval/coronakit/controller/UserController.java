@@ -58,7 +58,8 @@ public class UserController {
 	@SuppressWarnings("unchecked")
 	@RequestMapping("/add-to-cart/{productId}")
 	public ModelAndView showKit(@PathVariable("productId") int productId,HttpSession session) {
-		
+		ModelAndView mv;
+		boolean productAlreadyAdded = false;
 		List<ProductMaster> selectedProducts;
 		ProductMaster product;
 		product = productService.getProductById(productId);
@@ -66,10 +67,23 @@ public class UserController {
 		if(selectedProducts==null) {
 			selectedProducts = new ArrayList<ProductMaster>();
 		}
-		selectedProducts.add(product);
-		session.setAttribute("cartProducts", selectedProducts);
-		ModelAndView mv = new ModelAndView("show-all-item-user","products",productService.getAllProducts());
-		mv.addObject("msg", product.getProductName()+" added to Corona-Kit!");
+		for(ProductMaster thisProduct : selectedProducts) {
+			if(thisProduct.getId()==productId) {
+				productAlreadyAdded=true;
+				break;
+			}
+		}
+		if(productAlreadyAdded) {
+			session.setAttribute("cartProducts", selectedProducts);
+			mv = new ModelAndView("show-all-item-user","products",productService.getAllProducts());
+			mv.addObject("msg", product.getProductName()+" is already added to Corona-Kit! Please select different product");
+		} else {
+			selectedProducts.add(product);
+			session.setAttribute("cartProducts", selectedProducts);
+			mv = new ModelAndView("show-all-item-user","products",productService.getAllProducts());
+			mv.addObject("msg", product.getProductName()+" added to Corona-Kit!");
+		}
+		
 		System.out.println("selectedProducts:"+selectedProducts);
 		return mv;
 	}
